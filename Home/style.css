@@ -1,0 +1,161 @@
+body{
+  margin:0;
+  padding:0;
+  background-color: #1e8449;
+  font-family: 'Lato', sans-serif;
+}
+.header{
+  position: absolute;
+  top:0;
+  left:0;
+  height: 15%;
+  width:100%;
+}
+.line{
+position: absolute;
+top:65%;
+left: 5%;
+height:0;
+border-radius: 1px;
+border:2px solid white;
+animation: ext 1s ease-in-out 1;
+animation-delay: 1s;
+animation-fill-mode: forwards;
+visibility: hidden;
+}
+@keyframes ext{
+  from{width: 0%;visibility:visible;}
+  to{width: 14%;visibility:visible;}
+}
+.line2{
+position: absolute;
+top:40%;
+left: 47%;
+height:0;
+width:5%;
+border-radius: 1px;
+border:2px solid white;
+transition: ease-in-out 1.2s;
+}
+.words:hover~.line2{
+left:40%;
+width:20%;
+}
+
+.title{
+  line-height: 70px;
+  font-size: 3em;
+  color: white;
+}
+.center{
+  position: absolute;
+  top:15%;
+  left: 0%;
+  width:100%;
+  background-color: #27ae60;
+  height: 885px;
+}
+.words{
+  position: absolute;
+  top:0;
+  left:0;
+  height:400px;
+  width:100%;
+  text-align: #ecf0f1;
+  color: white;
+  font-size: 1.4em;
+  text-align: center;
+  justify-content: center;
+}
+.cards{
+  display: flex;
+  position: absolute;
+  top:500px;
+  left:0;
+  width:100%;
+  justify-content: center;
+}
+.card1,.card2,.card3{
+  position: relative;
+  background-color: #5f6a6a;
+  margin-right: 20px;
+  margin-left: 20px;
+  height:250px;
+  width:400px;
+  box-sizing: border-box;
+  border-left:30px solid #AEB6BF;
+  border-right: 15px solid #AEB6BF;
+  border-top: 5px solid #AEB6BF;
+  border-bottom: 5px solid #AEB6BF;
+  border-radius: 10px;
+  transition: transform 1s,box-shadow 1.5s;
+  transform: rotateZ(-90deg);
+}
+.inf1,.inf2,.inf3{
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  top:-30%;
+  text-align: center;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.inf1{
+  left:15%;
+}
+.inf2{
+  left:45%;
+}
+.inf3{
+  left:75%;
+}
+.card1{
+  background-image: url("gifs/stack.png");
+  background-size: cover;
+}
+.card1:hover{
+  background-image: url("gifs/stack.gif");
+}
+.card1:hover~.inf1{
+  opacity: 1;
+  transition: all 1.5s;
+}
+.card2{
+  background-image: url("gifs/Can.png");
+  background-size: cover;
+  margin-right: 10px;
+  margin-left: 10px;
+  width:450px;
+  height: 250px;
+  border-left: 15px solid #AEB6BF;
+}
+.card2:hover{
+  background-image: url("gifs/Can.gif");
+}
+.card2:hover~.inf2{
+  opacity: 1;
+}
+.card3{
+  background-image: url("gifs/envelope.png");
+  background-size: cover;
+}
+.card3:hover{
+  background-image: url("gifs/envelope.gif");
+}
+.card3:hover~.inf3{
+  opacity: 1;
+}
+.card1:hover,.card2:hover,.card3:hover{
+  transform: rotateZ(0deg);
+  box-shadow: 0px 0px 100px #566573;
+}
+.footer{
+  position: absolute;
+  top:1000px;
+  left:0%;
+  height:100px;
+  width:100%;
+  background-color: #1b2631;
+  color: #ECF0F1;
+  font-size: 1.2em;
+}

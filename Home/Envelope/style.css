@@ -1,0 +1,90 @@
+:root{
+  --envelope-body:#C7B49A;
+  --envelope-height:150px;
+  --envelope-width:300px;
+  --envelope-border-color1:#E74C3C;
+  --envelope-border-color2:#1E90FF;
+}
+body {
+  background-color: #5d6d7e;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+.envelope_body{
+  position:absolute;
+  background-color: var(--envelope-body);
+  top:40%;
+  left:30%;
+  height:var(--envelope-height);
+  width:var(--envelope-width);
+}
+.envelope_border {
+  position: absolute;
+  width: calc(var(--envelope-width) - 15px);
+  height: calc(var(--envelope-height) - 15px);
+  background-image: repeating-linear-gradient(135deg, var(--envelope-border-color1) 0px, var(--envelope-border-color1) 10px,  transparent 10px, transparent 20px, var(--envelope-border-color2) 20px, var(--envelope-border-color2) 30px, transparent     30px, transparent 40px);
+  padding: 7px;
+  z-index:1;
+}
+.envelope_flap{
+  position:absolute;
+  top:0%;
+  left:0%;
+  background-color: #C1AB8E;
+  height: 70%;
+  width: 100%;
+  z-index: 4;
+  clip-path: polygon(0% 0%, 7% 50%, 50% 100%, 93% 50%, 100% 0%);
+  transform-origin: top;
+  transition:ease-out 0.2s;
+}
+.envelope_flap_copy{
+  position:absolute;
+  top:0%;
+  left:0%;
+  background-color: #B49976;
+  height: 70%;
+  width: 100%;
+  z-index: 2;
+  clip-path: polygon(0% 0%, 15% 60%, 85% 60%,100% 0%);
+}
+.envelope_flap_border{
+  height:100%;
+  width:100%;
+  transition:ease-out 0.1s;
+  background-image: repeating-linear-gradient(135deg, var(--envelope-border-color1) 0px, var(--envelope-border-color1) 10px,  transparent 10px, transparent 20px, var(--envelope-border-color2) 20px, var(--envelope-border-color2) 30px, transparent     30px, transparent 40px);
+}
+.letter{
+  position: absolute;
+  top:10%;
+  left:5%;
+  width:90%;
+  height:70%;
+  background-color: white;
+  z-index: 2;
+  transition:ease-out 0.5s;
+}
+.letter_up,.letter_down{
+  height:100%;
+  width:100%;
+}
+.letter_down{
+  transform-origin: top;
+}
+/*.envelope_body:hover .envelope_flap{
+  transform:rotate3d(1,0,0,180deg);
+}
+.envelope_body:hover .envelope_flap_border{
+  opacity: 0.1;
+}*/
+.envelope_border_inner {
+  position: absolute;
+  top:3%;
+  left:2.5%;
+  background: var(--envelope-body);
+  width: 95%;
+  height: 93%;
+  clip-path: polygon(0% 5%,15% 42%,85% 42%,100% 5%,100% 100%,0% 100%);
+  z-index:3;
+}
